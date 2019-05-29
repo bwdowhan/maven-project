@@ -31,17 +31,16 @@ pipeline{
 					input message: 'Approve PRODUCTION Deployment?'
 				}
 				
+				build job: 'Deploy-to-Prod'
 			}
-
-			build job: 'Deploy-to-Prod'
-		}
-		post{
-			success{
-				echo 'Code deployed to Production.'
-			}
-			
-			failure{
-				echo 'Deployment failed.'
+			post{
+				success{
+					echo 'Code deployed to Production.'
+				}
+				
+				failure{
+					echo 'Deployment failed.'
+				}
 			}
 		}
 	}
