@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('Build'){
 			steps{
-				bat 'mvn clean package'
+				bat 'C:\devtools\apache-maven-3.6.1\bin\mvn clean package'
 			}
 			post{
 				success{
